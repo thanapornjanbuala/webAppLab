@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Info</title>
+</head>
+<body>
+    <h1 id="github-name"></h1>
+    <a id="github-link" target="_blank"><img id="github-image" src="https://avatars.githubusercontent.com/u/96261980?v=4" alt="GitHub Profile Image"></a>
+
+    <script>
+        // GitHub user data
+        const githubData = {
+            login: "thanapornjanbuala",
+            id: 96261980,
+            avatar_url: "https://avatars.githubusercontent.com/u/96261980?v=4",
+            html_url: "https://github.com/thanapornjanbuala",
+            name: null,
+        };
+
+        // Display user data
+        const githubNameElement = document.getElementById('github-name');
+        githubNameElement.textContent = githubData.login;
+
+        // Create a link to the GitHub profile
+        const githubLinkElement = document.getElementById('github-link');
+        githubLinkElement.href = githubData.html_url;
+        githubLinkElement.textContent = "GitHub Profile";
+
+        // Open the link in a new tab when clicking the name
+        githubNameElement.addEventListener('click', () => {
+            window.open(githubData.html_url, '_blank');
+        });
+
+        // Open the link in a new tab when clicking the image
+        const githubImageElement = document.getElementById('github-image');
+        githubImageElement.addEventListener('click', () => {
+            window.open(githubData.html_url, '_blank');
+        });
+    </script>
+</body>
+</html>

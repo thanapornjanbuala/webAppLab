@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Divide by Two</title>
+</head>
+<body>
+    <script>
+        const divideByTwo = num => {
+            // Check if the input is a valid integer
+            if (!Number.isInteger(num)) {
+                alert("Invalid input! Please enter a valid integer.");
+                return divideByTwo(Number(prompt("Enter an integer:")));
+            }
+
+            return num / 2;
+        };
+
+        // Ask the user for an integer and call the divideByTwo function
+        const userInput = Number(prompt("Enter an integer:"));
+        const result = divideByTwo(userInput);
+        alert(`The result of dividing ${userInput} by 2 is: ${result}`);
+    </script>
+</body>
+</html>
