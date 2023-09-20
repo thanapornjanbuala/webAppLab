@@ -1,0 +1,17 @@
+{
+    "name": "github-api-app",
+    "version": "1.0.0",
+    "description": "An app to make GitHub API requests",
+    "main": "prob4.js",
+    "scripts": {
+      "start": "node prob4.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "axios": "^0.24.0"
+    }
+  }
+  
+  

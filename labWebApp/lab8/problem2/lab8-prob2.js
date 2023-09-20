@@ -1,39 +1,33 @@
-const readline = require('readline');
+function areAllNumbers(args) {
+  return args.every(arg => !isNaN(arg));
+}
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+function calculate(operator, numbers) {
+  if (operator === 'add') {
+    return numbers.reduce((acc, num) => acc + num, 0);
+  } else if (operator === 'subtract') {
+    return numbers.reduce((acc, num) => acc - num);
+  } else {
+    return NaN;
+  }
+}
 
-rl.question('', (input) => {
-  const inputArray = input.split(' ');
+const args = process.argv.slice(2);
 
-  if (inputArray.length === 2) {
-    const operand1 = parseFloat(inputArray[0]);
-    const operand2 = parseFloat(inputArray[1]);
+if (args.length < 2) {
+  console.log('Please enter a valid input.');
+} else {
+  const operator = args[0].toLowerCase();
+  const numbers = args.slice(1).map(Number);
 
-    if (!isNaN(operand1) && !isNaN(operand2)) {
-      rl.question('Enter operation (add/subtract): ', (operation) => {
-        if (operation === 'add') {
-          const result = operand1 + operand2;
-          console.log(`Operands: ${operand1} ${operand2}`);
-          console.log(`${operand1} + ${operand2} = ${result}`);
-        } else if (operation === 'subtract') {
-          const result = operand1 - operand2;
-          console.log(`Operands: ${operand1} ${operand2}`);
-          console.log(`${operand1} - ${operand2} = ${result}`);
-        } else {
-          console.log('unknown operater.');
-        }
-
-        rl.close();
-      });
+  if (areAllNumbers(numbers)) {
+    const result = calculate(operator, numbers);
+    if (!isNaN(result)) {
+      console.log(`Result: ${result}`);
     } else {
-      console.log('Invalid input. Please enter valid numbers.');
-      rl.close();
+      console.log('Unknown operator. Please use "add" or "subtract".');
     }
   } else {
-    console.log('Invalid input. Please enter exactly two operands separated by space.');
-    rl.close();
+    console.log('Please enter numbers as arguments.');
   }
-});
+}
