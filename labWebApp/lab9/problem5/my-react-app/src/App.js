@@ -5,7 +5,7 @@ export default function App() {
   const users = [
     {
       url: "https://github.com/thanapornjanbuala",
-      imgURL: "https://avatars.githubusercontent.com/u/96040259?v=4",
+      imgURL: "https://avatars.githubusercontent.com/u/96261980?v=4",
       alt: "thanapornjanbuala",
       followers: 0,
     },

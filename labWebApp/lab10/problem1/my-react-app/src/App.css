@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-info {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button {
+  margin: 20px;
+}
+
+.button-previous {
+  background-color: orange;
+}
+
+.button-next {
+  background-color: greenyellow;
+}
